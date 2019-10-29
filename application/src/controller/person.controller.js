@@ -1,4 +1,4 @@
-const Person = require('../../schemas/person.schema');
+const Person = require('../../domain/models/person.model');
 
 let personController = {
 
