@@ -1,5 +1,5 @@
 const express = require('express');
-const DB = require ('./connection/database');
+const DB = require('./connection/database');
 const morgan = require('morgan');
 
 const app = express();
@@ -9,10 +9,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(morgan('dev'));
 //router
-app.use('/',require('./src/routes/index.routes'));
+app.use('/', require('./src/routes/index.routes'));
 
 //starting the server
-app.listen(PORT,()=>{
+app.get('/', (req, res) => {
+    res.send("Express, mongoose y nodeJS")
+});
+app.listen(PORT, () => {
     console.log('App started on port', PORT);
-    
+
 });

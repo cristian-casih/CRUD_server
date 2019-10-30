@@ -96,8 +96,8 @@ let personController = {
         const data = await personBl.delete(req.params.id);
         if (data) {
             res.status(200).json({
-                "success": data,
-                "msg": "Person deleted"
+                'success': data,
+                'msg': 'Person deleted'
             });
         }
         else {
