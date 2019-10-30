@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const PersonSchema = new mongoose.Schema({
+const personSchema = new mongoose.Schema({
     name: String,
     lastname: String,
     age: Number,
@@ -9,4 +9,4 @@ const PersonSchema = new mongoose.Schema({
     created: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('persons', PersonSchema);
+module.exports = mongoose.model('persons', personSchema);
