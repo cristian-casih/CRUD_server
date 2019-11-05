@@ -48,7 +48,7 @@ let personController = {
             } else {
                 res.status(500).json({
                     "success": result,
-                    "msg": "No cats person."
+                    "msg": "No saved person."
                 });
             }
 
