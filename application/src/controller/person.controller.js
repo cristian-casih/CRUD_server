@@ -48,7 +48,7 @@ let personController = {
             } else {
                 res.status(500).json({
                     "success": result,
-                    "msg": "No cats saved."
+                    "msg": "No cats person."
                 });
             }
 
@@ -66,7 +66,7 @@ let personController = {
                 id: req.params.id,
                 name: req.body.name,
                 lastname: req.body.lastname,
-                age: req.body.age,
+                dateofbirth: req.body.dateofbirth,
                 email: req.body.email,
                 sex: req.body.sex
             }
@@ -75,7 +75,7 @@ let personController = {
             if (result) {
                 res.status(200).json({
                     "success": true,
-                    "msg": "Person Actualizado",
+                    "msg": "Person Update",
                     "person": result
                 });
             } else {

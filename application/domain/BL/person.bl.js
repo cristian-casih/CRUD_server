@@ -34,7 +34,7 @@ const personBL = () => {
             console.log(personToUpdate.name);
             
             personToUpdate.lastname = person.lastname;
-            personToUpdate.age = person.age;
+            personToUpdate.dateofbirth = person.dateofbirth;
             personToUpdate.email = person.email;
             personToUpdate.sex = person.sex;
 
