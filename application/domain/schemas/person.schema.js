@@ -1,21 +1,19 @@
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
-const PersonSchema = joiValidate = (obj) => {
-    let model = {
-        name: Joi.types.String().min(6).max(30).required(),
-        lastname: Joi.types.String().required(),
-        age: Joi.types.Number().min(1).max(3).required(),
-        email: Joi.types.String().email().required(),
-        sex: Joi.types.String().required(),
-        //password: Joi.types.String().min(8).max(30).regex(/[a-zA-Z0-9]{3,30}/).required(),
-        created: Joi.types.Date(),
-    }
-    return Joi.validate(obj, model);
-}
+const personSchema = Joi.object({
+
+    name: Joi.string().min(3).max(30).required(),
+    lastname: Joi.string().min(3).max(50).required(),
+    dateofbirth: Joi.date(),
+    email: Joi.string().email().required(),
+    sex: Joi.string().required(),
+    //password: Joi.types.String().min(8).max(30).regex(/[a-zA-Z0-9]{3,30}/).required(),
+    created: Joi.date(),
+})
 const validation = () => {
     const scope = this;
-    scope.Validate = (person) => {
-        const hasError = PersonSchema.validate(person, { abortEarly: false }).error;
+    scope.validate = (person) => {
+        const hasError = personSchema.validate(person, { abortEarly: false }).error;
         const messasge = !hasError ? "" : hasError.details.map((err) => err.message).join(', ');
         return { success: !hasError, messasge };
     }
