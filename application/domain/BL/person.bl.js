@@ -20,8 +20,8 @@ const personBL = () => {
     };
     this.getOne = async (id) => {
         try {
-            const data = await personModel.findById(id);
-            return data;
+            const person = await personModel.findById(id);
+            return person;
         } catch{
             null;
         }
